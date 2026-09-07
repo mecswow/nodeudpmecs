@@ -1,4 +1,4 @@
-#!/usr/bin/env nos
+#!/usr/bin/env nod
 
 const http = require("http");
 const axios = require("axios");
@@ -15,19 +15,19 @@ const AUTO_ACCESS = process.env.AUTO_ACCESS || false; // false关闭自动保活
 const FILE_PATH = process.env.FILE_PATH || '.tmp';    // 运行目录,sub节点文件保存目录
 const SUB_PATH = process.env.SUB_PATH || 'sub';       // 订阅路径
 const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;        // http服务订阅端口
-const UUID = process.env.UUID || '1820212a-85f4-4d16-9d1b-e569400bb18c'; // 使用哪吒v1,在不同的平台运行需修改UUID,否则会覆盖
+const UUID = process.env.UUID || 'd45695be-e142-43ab-9fbb-f96f9ca57d11'; // 使用哪吒v1,在不同的平台运行需修改UUID,否则会覆盖
 const NEZHA_SERVER = process.env.NEZHA_SERVER || '';        // 哪吒v1填写形式: nz.abc.com:8008  哪吒v0填写形式：nz.abc.com
 const NEZHA_PORT = process.env.NEZHA_PORT || '';            // 使用哪吒v1请留空，哪吒v0需填写
 const NEZHA_KEY = process.env.NEZHA_KEY || '';              // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0的agent密钥
-const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'im3apps.mecswow.my.id';          // 固定隧道域名,留空即启用临时隧道
-const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiYjM5NjcwYzE5NDc2MDIxZDM2Y2I4YTliNmYxNWQ1MmUiLCJ0IjoiYjE1ODNiMDItNDUyYS00MzkzLWExNWEtNWQzMzI3MTM5ODU0IiwicyI6IlptUTROamt4T0RndE5UY3lNUzAwTTJNNExUaGhPR010WWpJNVltUTVOR1JsWXpNdyJ9';              // 固定隧道密钥json或token,留空即启用临时隧道,json获取地址：https://json.zone.id
+const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'udp.mecswow.my.id';          // 固定隧道域名,留空即启用临时隧道
+const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiYjM5NjcwYzE5NDc2MDIxZDM2Y2I4YTliNmYxNWQ1MmUiLCJ0IjoiYzAxZjQwNDUtMWUxNC00YjhhLTk3NWMtMmY1Y2RhZjQyZGNiIiwicyI6IlpUaGxZMlEyT1RFdE1qUXhOaTAwTmpRMExXSm1OMkV0TjJFeE1HTXdPV013T0daaSJ9';              // 固定隧道密钥json或token,留空即启用临时隧道,json获取地址：https://json.zone.id
 const ARGO_PORT = process.env.ARGO_PORT || 8001;            // 固定隧道端口,使用token需在cloudflare后台设置和这里一致
 const S5_PORT = process.env.S5_PORT || '';                  // socks5端口，支持多端口的可以填写，否则留空
 const HY2_PORT = process.env.HY2_PORT || '';                // hy2端口，支持多端口的可以填写，否则留空
 const REALITY_PORT = process.env.REALITY_PORT || '';        // reality端口，支持多端口的可以填写，否则留空
 const CFIP = process.env.CFIP || '104.16.49.231';            // 节点优选域名或优选ip
 const CFPORT = process.env.CFPORT || 443;                   // 节点优选域名或优选ip对应的端口
-const NAME = process.env.NAME || 'eta';                        // 节点名称
+const NAME = process.env.NAME || 'ata';                        // 节点名称
 const CHAT_ID = process.env.CHAT_ID || '';                  // Telegram chat_id  两个变量不全不推送节点到TG 
 const BOT_TOKEN = process.env.BOT_TOKEN || '';              // Telegram bot_token 两个变量不全不推送节点到TG 
 const SHOW_LOG = !['false', 'disable', 'no'].includes((process.env.SHOW_LOG || 'true').toLowerCase()); // 是否显示日志输出，true/yes显示，false/disable/no屏蔽，默认显示
