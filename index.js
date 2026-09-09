@@ -1,4 +1,4 @@
-#!/usr/bin/env non
+#!/usr/bin/env nop
 
 const http = require("http");
 const axios = require("axios");
